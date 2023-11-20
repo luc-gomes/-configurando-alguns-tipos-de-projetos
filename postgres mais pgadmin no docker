@@ -9,7 +9,7 @@
 	
 # container do postgres
 # senha: 123456789
-# porta: 5432:5432 docker:aplicação
+# porta: 5432:5432 (docker:aplicação)
 
 	docker run --name postgres --network=postgres-network -e "POSTGRES_PASSWORD=123456789" -p 5432:5432 -v /home/$USER/Docker/PostgreSQL:/var/lib/postgresql/data -d postgres
 	
@@ -17,24 +17,21 @@
 
 	sudo docker ps
 
-
 # pgadmin dentro da network
 # email : meuemail=@gmail.com
 # senha: 123456789
-docker run --name pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAILmeuemail=@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=123456789" -d dpage/pgadmin4
-
+	
+	docker run --name pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAILmeuemail=@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=123456789" -d dpage/pgadmin4
 
 #ver imagens
 
-docker ps
+	docker ps
 
 #logar no pgadmin
 
-
- http://localhost:15432
+ 	http://localhost:15432
  
- 
- # fonte original
+# fonte original
  
  https://renatogroffe.medium.com/postgresql-docker-executando-uma-inst%C3%A2ncia-e-o-pgadmin-4-a-partir-de-containers-ad783e85b1a4
 
